@@ -6,13 +6,6 @@ RUN apt-get update && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
-# Install Chrome and related dependencies
-RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - && \
-    echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" | tee /etc/apt/sources.list.d/google-chrome.list && \
-    apt-get update && apt-get install -y google-chrome-stable && \
-    apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
-
 # JAVA_HOME 환경 변수 설정
 ENV JAVA_HOME /usr/lib/jvm/java-17-openjdk-amd64
 
@@ -20,16 +13,22 @@ ENV JAVA_HOME /usr/lib/jvm/java-17-openjdk-amd64
 WORKDIR /app
 
 ARG BRANCH_NAME=healthcare_side_projects
-ARG DIR_NAME=healthcare_side_projects
+ARG DIR_NAME=healthcare_side_projects # 변경대상
 
 # Clone the Git repository. Here we dynamically specify the repository name using the variable defined earlier.
-RUN git clone https://github.com/nohjuhyeon/healthcare_side_projects ${DIR_NAME}
-
+# RUN git clone -b ${BRANCH_NAME} https://github.com/gocolab/co_templates ${DIR_NAME}
+RUN git clone https://github.com/nohjuhyeon/healthcare_side_projects ${DIR_NAME}           # 변경대상
 # Changes the working directory to /app/${REPO_NAME}. This uses the variable to dynamically set the directory path.
 WORKDIR /app/${DIR_NAME}
 
 # RUN pip install --no-cache-dir -r ./requirements.txt
 RUN pip install -r ./requirements.txt
 
-# RUN rm -rf .git
+# RUN rm -rf .git               # 도커 만들어지고나면 주석처리하기
 
+## 진행전 해야할 선작업
+# - .git 삭제
+# - 프로젝트 폴더 이름 변경
+# - commit yo github
+# - Dockerfile 변경(2군데)
+# - RUN rm -rf .git 주석처리하기

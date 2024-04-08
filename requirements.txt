@@ -1,13 +1,9 @@
 jupyterlab
-pyarrow
-numpy
 
-imblearn
-xgboost
-catboost
-ngboost
-lightgbm 
-yellowbrick
+pyarrow
+pandas
+
+numpy
 
 matplotlib
 seaborn
@@ -18,14 +14,11 @@ konlpy
 pymongo
 python-mecab-ko
 pyLDAvis
-
-
-requests
-beautifulsoup4
-lxml
-pandas
-selenium
-urllib3
-scrapy
-webdriver_manager
+fastapi
+uvicorn
+jinja2
+python-multipart
+python-jose[cryptography]
+passlib[bcrypt]
+pydantic-settings
 xmltodict
