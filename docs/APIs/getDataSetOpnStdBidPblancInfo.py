@@ -10,7 +10,7 @@ pass
 response = requests.get(url) 
 pass
 # response의 내용을 출력
-print(response.content) 
+# print(response.content) 
 
 # json 파일을 dictionary 형태로 변환
 import json
