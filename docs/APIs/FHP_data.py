@@ -27,8 +27,8 @@ import xmltodict
 #         }
 url = 'https://apis.data.go.kr/B551182/diseaseInfoService/getDissByGenderAgeStats?serviceKey=Ix7Xj2a52fUYj6pPXF5TMooSl/dFBu/Y6/oyu8NyrmGGcfaMKwy99HEdnaPF5AAzDB0UBHEjkRjWrvJN7M5lPg==&numOfRows=10&pageNo=1&year=2022&sickCd=A00&sickType=1&medTp=1'
 response = requests.get(url)
-# # data_dict = xmltodict.parse(response.text)
-# print(data_dict) 
+# data_dict = xmltodict.parse(response.text)
+print(data_dict) 
 
 
 
