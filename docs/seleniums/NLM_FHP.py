@@ -2,7 +2,10 @@
 from pymongo import MongoClient
 mongoClient = MongoClient("mongodb://127.0.0.1:27017")
 # database 연결
-
+database = mongoClient["healthcare_sideproject"]
+# collection 작업
+collection = database['FHP_data']
+# insert 작업 진행
 # 크롤링 동작
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service as ChromeService
@@ -50,6 +53,7 @@ while True:
     print(title)
     print(artical_date)
     print(abstract_list)
+    collection.insert_one({"title": title,"artical_date":artical_date,"abstract_list":abstract_list})
     next_btn = browser.find_element(By.CSS_SELECTOR,value='div.next.side-link.visible > a')
     next_btn.click()
     time.sleep(1)
