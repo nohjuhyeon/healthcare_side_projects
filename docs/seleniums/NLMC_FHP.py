@@ -5,7 +5,6 @@ mongoClient = MongoClient("mongodb://127.0.0.1:27017")
 database = mongoClient["healthcare_sideproject"]
 # collection 작업
 collection = database['PMC_FHP_data']
-# collection.delete_many({})
 # insert 작업 진행
 # 크롤링 동작
 from selenium import webdriver
@@ -41,7 +40,7 @@ search_click = browser.find_element(by=By.CSS_SELECTOR,value="#main-content > se
 search_click.click()
 time.sleep(3)
 article_list = browser.find_elements(by=By.CSS_SELECTOR,value="#maincontent > div > div:nth-child(5) > div > div.rslt > div.title > a")
-page_num = 0
+page_num = 122
 while True:
     for i in range(len(article_list)):
         article_list = browser.find_elements(by=By.CSS_SELECTOR,value="#maincontent > div > div:nth-child(5) > div > div.rslt > div.title > a")
