@@ -56,6 +56,7 @@ page_number.send_keys(page_num)
 page_number.send_keys(Keys.ENTER)
 time.sleep(3)
 article_list = browser.find_elements(by=By.CSS_SELECTOR,value="#maincontent > div > div:nth-child(5) > div > div.rslt > div.title > a")
+
 while True:
     for i in range(len(article_list)):
         article_list = browser.find_elements(by=By.CSS_SELECTOR,value="#maincontent > div > div:nth-child(5) > div > div.rslt > div.title > a")
