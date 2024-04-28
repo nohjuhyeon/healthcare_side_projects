@@ -48,7 +48,7 @@ page_number = browser.find_element(by=By.CSS_SELECTOR,value="#pageno")
 
 ##################
 ## 여기 수정해주기  ##
-page_num = 123 ####
+page_num = 195  ##
 ##################
 
 page_number.send_keys(Keys.BACK_SPACE)
