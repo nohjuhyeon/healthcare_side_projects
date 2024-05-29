@@ -12,12 +12,12 @@ ENV JAVA_HOME /usr/lib/jvm/java-17-openjdk-amd64
 # 작업 디렉토리 설정
 WORKDIR /app
 
-ARG BRANCH_NAME=heart_disease_projects
-ARG DIR_NAME=heart_disease_projects # 변경대상
+ARG BRANCH_NAME=healthcare_side_projects
+ARG DIR_NAME=healthcare_side_projects # 변경대상
 
 # Clone the Git repository. Here we dynamically specify the repository name using the variable defined earlier.
 # RUN git clone -b ${BRANCH_NAME} https://github.com/gocolab/co_templates ${DIR_NAME}
-RUN git clone https://github.com/nohjuhyeon/heart_disease_projects ${DIR_NAME}           # 변경대상
+RUN git clone https://github.com/nohjuhyeon/healthcare_side_projects ${DIR_NAME}           # 변경대상
 # Changes the working directory to /app/${REPO_NAME}. This uses the variable to dynamically set the directory path.
 WORKDIR /app/${DIR_NAME}
 
