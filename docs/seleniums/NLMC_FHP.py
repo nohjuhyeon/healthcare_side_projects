@@ -1,8 +1,8 @@
 ## dbmongo의 collection 연결
 from pymongo import MongoClient
-mongoClient = MongoClient("mongodb://trainings.iptime.org:48003/")
+mongoClient = MongoClient("mongodb://localhost:27017/")
 # database 연결
-database = mongoClient["healthcare_sideproject"]
+database = mongoClient["healthcare_project"]
 # collection 작업
 collection = database['PMC_FHP_data']
 # insert 작업 진행
@@ -48,7 +48,7 @@ page_number = browser.find_element(by=By.CSS_SELECTOR,value="#pageno")
 
 ##################
 ## 여기 수정해주기  ##
-page_num = 195  ##
+page_num = 175  ##
 ##################
 
 page_number.send_keys(Keys.BACK_SPACE)
